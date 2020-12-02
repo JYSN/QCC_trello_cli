@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "QCC_trello_cli"
 version = "0.1.0"
-description = ""
+description = "A small commandline utility for using Trello"
 authors = ["Jayson <Brown.JaysonN@gmail.com>"]
 
 [tool.poetry.dependencies]

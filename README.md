@@ -1,5 +1,5 @@
 # QCC Trello CLI
-## A Word
+### A Word
 This is  a work in progress and likely not yet functional.
 ## Name & Purpose
 This is a subproject of Quarantine Coding Club (QCC), aimed at creating a command line interface for the Trello boards we use to keep our goals in sync.
