@@ -2,7 +2,7 @@
 name = "QCC_trello_cli"
 version = "0.1.0"
 description = "A small commandline utility for using Trello"
-authors = ["Jayson <Brown.JaysonN@gmail.com>"]
+authors = ["JYSN"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
