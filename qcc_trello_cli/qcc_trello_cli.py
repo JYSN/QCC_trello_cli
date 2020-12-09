@@ -14,4 +14,31 @@
     related board
     https://trello.com/b/e9BAH5bn/qcc-nightfate
     """
-    
+
+
+
+# Imports
+
+
+import requests
+
+import json
+
+import private
+
+
+
+# Variables
+
+
+TKEY = private.TRELLO_KEY
+
+
+TTKN = private.TRELLO_TKN
+
+
+
+# Functions
+
+## Requests
+
