@@ -30,15 +30,22 @@ import private
 
 # Variables
 
+## Globals
 
-TKEY = private.TRELLO_KEY
-
-
-TTKN = private.TRELLO_TKN
+# TKEY = private.TRELLO_KEY
 
 
+# TTKN = private.TRELLO_TKN
+
+
+## Request variables
+
+multipass = {
+    'key': private.TRELLO_KEY,
+    'token' : private.TRELLO_TKN
+}
 
 # Functions
 
-## Requests
+# ## Requests
 
