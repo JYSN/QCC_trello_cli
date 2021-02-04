@@ -18,6 +18,7 @@
 
 
 # Imports
+# ===============
 
 
 import requests
@@ -29,23 +30,75 @@ import private
 
 
 # Variables
+# ===================
 
 ## Globals
+# ___________________
 
 # TKEY = private.TRELLO_KEY
 
 
 # TTKN = private.TRELLO_TKN
 
+TRELLORL = "https://api.trello.com/1/members/me/boards"
 
 ## Request variables
+# ___________________
 
-multipass = {
+MULTIPASS = {
     'key': private.TRELLO_KEY,
     'token' : private.TRELLO_TKN
 }
 
 # Functions
+# ===================
+
+
+def nl(contents):
+    print("\n")
+    print(contents)
+    print("\n")
+
+
+def small_goal():
+    # print trello key and token
+    print("\n", MULTIPASS, "\n")
+
+
+def callweb(url):
+    # quick webrequest
+    
+    response = requests.get(url)
+
+    type(response.ok)
+
+    if not response.ok:
+        print(f"The Cake is a lie!:{type(response)} {response.status_code} {response.reason}")
+
+    data  = response.json()
+    
+    print(f" length:{len(data)},\n type:{type(data)}")
 
 # ## Requests
 
+# MAIN
+# ===================
+
+def main():
+    """Uses private tokens to make webrequest to trello's API,
+        then parses data for specific info"""
+    # small_goal()
+    nl("NEW INSTANCE !1!1")
+    callweb("https://jsonplaceholder.typicode.com/todos")
+
+
+main()
+
+
+
+# GOALS
+# ++++++++++++++++++++++
+# [x] hit up a website via Requests
+# [ ] make a successful request to trello API
+#     * WEBAPIs 10 pt 2
+#     * https://alissa-huskey.github.io/python-class/lessons/web-apis.html#part-10-final-project
