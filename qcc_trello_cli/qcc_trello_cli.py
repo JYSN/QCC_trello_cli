@@ -27,11 +27,21 @@ import json
 
 import private
 
+from pprint import pprint
+
+from os import _exit as exit
+
 
 
 # Variables
 # ===================
 
+## Debug variables
+# __________________
+
+DEBUG = False
+
+ 
 ## Globals
 # ___________________
 
@@ -65,19 +75,23 @@ def small_goal():
     print("\n", MULTIPASS, "\n")
 
 
-def callweb(url):
-    # quick webrequest
+def callweb(url, parameters):
+    """A webrequest function for returning JSON data, as well as type/length info.
+        Expects two arguements (URL, PARAMETERS),
+            where the second arguement should be a dictionary for the request paramters.
+        Raises an error with Code and Reason if response.ok=False"""
     
-    response = requests.get(url)
-
-    type(response.ok)
+    response = requests.get(url, params=parameters)
 
     if not response.ok:
-        print(f"The Cake is a lie!:{type(response)} {response.status_code} {response.reason}")
+        print(f"The Cake is a lie!: {response.status_code} {response.reason}")
+        exit(1)
 
     data  = response.json()
     
-    print(f" length:{len(data)},\n type:{type(data)}")
+    # print(f" length:{len(data)},\n type:{type(data)}")
+
+    return data
 
 # ## Requests
 
@@ -89,16 +103,12 @@ def main():
         then parses data for specific info"""
     # small_goal()
     nl("NEW INSTANCE !1!1")
-    callweb("https://jsonplaceholder.typicode.com/todos")
+    data = callweb("https://api.trello.com/1/xxx", MULTIPASS)
+    # data = callweb(TRELLORL, MULTIPASS)
+    pprint(data)
 
 
 main()
 
 
 
-# GOALS
-# ++++++++++++++++++++++
-# [x] hit up a website via Requests
-# [ ] make a successful request to trello API
-#     * WEBAPIs 10 pt 2
-#     * https://alissa-huskey.github.io/python-class/lessons/web-apis.html#part-10-final-project
