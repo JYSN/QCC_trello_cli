@@ -103,8 +103,8 @@ def main():
         then parses data for specific info"""
     # small_goal()
     nl("NEW INSTANCE !1!1")
-    data = callweb("https://api.trello.com/1/xxx", MULTIPASS)
-    # data = callweb(TRELLORL, MULTIPASS)
+    # data = callweb("https://api.trello.com/1/xxx", MULTIPASS)
+    data = callweb(TRELLORL, MULTIPASS)
     pprint(data)
 
 
