@@ -12,6 +12,9 @@ requests = "^2.25.0"
 pytest = "^5.2"
 ipykernel = "^5.3.4"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.poetry.scripts]
 hello = "calls.hello:hello"
 
